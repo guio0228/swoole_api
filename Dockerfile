@@ -21,5 +21,7 @@ COPY . .
 # 從 Composer 容器複製 Composer 可執行文件
 COPY --from=composer:2.6.5 /usr/bin/composer /usr/bin/composer
 
+ENV PORT=8000
+
 # 設置容器入口點
 ENTRYPOINT [ "docker/entrypoint.sh" ]
