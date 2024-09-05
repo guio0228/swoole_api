@@ -8,6 +8,8 @@ RUN apt-get update -y && \
 # 安裝 PHP 擴展
 RUN docker-php-ext-install pdo pdo_mysql bcmath
 
+RUN docker-php-ext-install pcntl
+
 # 安裝 Redis 擴展並啟用
 RUN pecl install -o -f redis swoole \
     && rm -rf /tmp/pear \
