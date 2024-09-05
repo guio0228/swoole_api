@@ -6,9 +6,7 @@ RUN apt-get update -y && \
     apt-get install -y software-properties-common curl gnupg debian-keyring debian-archive-keyring apt-transport-https ca-certificates build-essential dos2unix gcc git git-lfs libmcrypt4 libpcre3-dev libpng-dev chrony make pv python3-pip re2c supervisor unattended-upgrades whois vim cifs-utils bash-completion zsh zip unzip expect libbrotli-dev
 
 # 安裝 PHP 擴展
-RUN docker-php-ext-install pdo pdo_mysql bcmath
-
-RUN docker-php-ext-install pcntl
+RUN docker-php-ext-install pdo pdo_mysql bcmath pcntl
 
 # 安裝 Redis 擴展並啟用
 RUN pecl install -o -f redis swoole \
